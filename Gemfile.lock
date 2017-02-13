@@ -40,6 +40,7 @@ GEM
       tzinfo (~> 1.1)
     addressable (2.5.0)
       public_suffix (~> 2.0, >= 2.0.2)
+    amq-protocol (2.1.0)
     arel (7.1.4)
     awesome_print (1.7.0)
     babel-source (5.8.35)
@@ -54,6 +55,8 @@ GEM
     binding_of_caller (0.7.2)
       debug_inspector (>= 0.0.1)
     builder (3.2.3)
+    bunny (2.6.3)
+      amq-protocol (>= 2.0.1)
     byebug (9.0.6)
     capybara (2.12.0)
       addressable
@@ -235,6 +238,7 @@ DEPENDENCIES
   awesome_print
   bcrypt (~> 3.1.7)
   better_errors
+  bunny
   byebug
   capybara
   coffee-rails (~> 4.1.0)
