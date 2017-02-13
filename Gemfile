@@ -16,6 +16,7 @@ gem 'awesome_print'
 gem 'sprockets-es6'
 gem 'bcrypt', '~> 3.1.7'
 gem 'public_suffix'
+gem 'bunny'
 
 # gem 'unicorn'
 
@@ -26,6 +27,7 @@ group :development do
 end
 
 group :development, :test do
+  gem 'listen'
   gem 'byebug'
   gem 'rspec-rails'
   gem 'capybara'
