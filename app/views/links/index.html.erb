@@ -1,1 +1,9 @@
 <h1>All Links</h1>
+<% @links.each do |link| %>
+<ul>
+  <li><%= link.title %></li>
+  <li><%= link.url %></li>
+  <li><%= link.read %></li>
+  <li><%= link_to "Mark as Read", "/links/#{link.id}/read", method: :put %></li>
+</ul>
+<% end %>

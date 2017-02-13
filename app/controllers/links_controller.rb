@@ -18,5 +18,4 @@ class LinksController < ApplicationController
     pub.subscribe_to_user_queue
   end
 
-
 end

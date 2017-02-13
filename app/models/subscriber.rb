@@ -25,15 +25,21 @@ class Subscriber
   def subscribe_to_link_queue
     lockbox_to_hotreads_queue_link.subscribe do |delivery_info, metadata, payload|
       parsed_payload = JSON.parse(payload)
-      puts "#{payload}"
+      link = Link.find_or_create_by(
+        title: parsed_payload["title"],
+        user_id: parsed_payload["user_id"],
+        url: parsed_payload["url"],
+        read: parsed_payload["read"]
+      )
+      puts "#{link}"
     end
   end
 
   def subscribe_to_user_queue
     lockbox_to_hotreads_queue_user.subscribe do |delivery_info, metadata, payload|
       parsed_payload = JSON.parse(payload)
-      user = User.find_or_create_by(email: parsed_payload[:email])
-      puts "#{payload}"
+      user = User.find_or_create_by(email: parsed_payload["email"])
+      puts "#{user}"
     end
   end
 
