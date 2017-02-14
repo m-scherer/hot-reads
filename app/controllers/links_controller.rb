@@ -3,7 +3,7 @@ class LinksController < ApplicationController
   def index
     subscribe_to_links
     subscribe_to_users
-    @links = Link.all
+    @top_ten = Link.limit(10).group(:url).count
   end
 
   private
