@@ -28,9 +28,9 @@ class Subscriber
       link = Link.find_or_create_by(
         title: parsed_payload["title"],
         user_id: parsed_payload["user_id"],
-        url: parsed_payload["url"],
-        read: parsed_payload["read"]
+        url: parsed_payload["url"]
       )
+      link.update(parsed_payload)
       puts "#{link}"
     end
   end
