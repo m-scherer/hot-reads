@@ -1,8 +1,8 @@
 <h1>Top 10 Read Links</h1>
 <ol>
-  <% @top_ten.each do |k,v| %>
+  <% @top_ten.each do |link| %>
     <li>
-       <strong><%= k %></strong> visited: <%= v %> times
+       <strong><%= link.url %></strong> visited: <%= link.counted %> times
     </li>
   <% end %>
 </ol>
