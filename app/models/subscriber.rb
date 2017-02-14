@@ -2,12 +2,13 @@ class Subscriber
   attr_reader :channel, :lockbox_to_hotreads_queue_link, :lockbox_to_hotreads_queue_user
 
   def initialize
-    connection = Bunny.new(
-    host: "experiments.turing.io",
-    port: "5672",
-    user: "student",
-    pass: "PLDa{g7t4Fy@47H"
-    )
+    # connection = Bunny.new(
+    # host: "experiments.turing.io",
+    # port: "5672",
+    # user: "student",
+    # pass: "PLDa{g7t4Fy@47H"
+    # )
+    connection = Bunny.new(ENV['RABBITMQ_BIGWIG_RX_URL'])
     connection.start
     @channel = connection.create_channel
     create_link_channel
